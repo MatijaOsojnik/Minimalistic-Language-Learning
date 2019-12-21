@@ -1,0 +1,18 @@
+#header {
+    height: 30vh;
+    text-align: center;
+    margin: 5% auto;
+}
+/* .container{
+    width: 50%;
+    border: 1px solid green;
+} */
+.container-item {
+    border: 1px solid black;
+}
+
+h2.germantext {
+    padding: 2rem 0;
+    font-family: "Germania One";
+    color: #3a3535;
+}

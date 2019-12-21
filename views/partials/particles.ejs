@@ -1,0 +1,31 @@
+
+
+<canvas class="particles"></canvas>
+
+<script>
+  async function checkSubmit(e) {
+      console.log(e.keyCode)
+   if(e && e.keyCode == 13) {
+      document.forms[0].submit();
+   }
+}
+</script>
+
+<script>window.onload = async function() {
+  Particles.init({
+    selector: '.particles',
+    color: ["#e3b04b"],
+    maxParticles: 50
+  });
+  // E.g. gets called on a button click
+
+};</script>
+<script>
+async function hover(element){
+  element.setAttribute('src', 'images/moonNight.svg')
+}
+async function unhover(element){
+  element.setAttribute('src', 'images/moonDay.svg')
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>

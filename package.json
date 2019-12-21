@@ -1,0 +1,32 @@
+{
+  "name": "randomquotegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SnorkiV3/phraser.git"
+  },
+  "author": "Matija Osojnik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SnorkiV3/phraser/issues"
+  },
+  "homepage": "https://github.com/SnorkiV3/phraser#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "browserify": "^16.5.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "jsdom": "^15.2.1",
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.1",
+    "node-sass": "^4.13.0",
+    "nodejs": "^0.0.0"
+  }
+}

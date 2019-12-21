@@ -1,0 +1,129 @@
+/* GENERAL */
+@font-face {
+  font-family: LoveloBlack;
+  src: url(../../fonts/Lovelo-Black.ttf);
+}
+@font-face {
+  font-family: LoveloBlack-Bold;
+  src: url(../../fonts/Lovelo-LineBold.ttf);
+}
+
+/* f4f4f4 */
+/* linear-gradient(to right, #ffffff, #bae8e8); */
+
+body {
+  background: #ecfcff;
+    margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+.container {
+  background-color: #ecfcff;
+    margin: 0 auto;
+    padding: 3 10%;
+    text-align: center;
+}
+
+.main {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  position: absolute;
+}
+
+a, a:hover{
+  color: #1b2a49;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+
+textarea, h3#german, span.count{
+  font-family: "Germania One"
+}
+
+
+
+a, h1, h2, h3, h4, h5, h6 {
+  font-family: LoveloBlack;
+}
+
+
+.container-timer {
+  font-size: 30px;
+  text-align: center;
+  margin: 3rem 8%;
+}
+
+/* MAIN CONTAINER */
+.flex-container {
+  width: auto;
+  margin: 5% auto;
+  text-align: center;
+  display: flex;
+  padding: 2.2rem 0;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+textarea {
+  display: flex;
+  width: 50%;
+  border-radius: 1%;
+  box-shadow: red;
+  border: none;
+  outline: lavender;
+  resize: none;
+  margin: 2rem 25%;
+  padding: 15px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+textarea:hover{
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+input:focus, textarea:focus {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background: rgba(0,0,0,.1);
+  border-radius: 1%;
+    outline: none;
+}
+
+/* SUBMIT BUTTON */
+
+.submitBtn {
+  display:inline-block;
+  padding: 0.35em 2em;
+  border: 0.1em solid #FFFFFF;
+  margin: 0.2rem 0.3em 0.3em 0;
+  border-radius:0.33em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color:#FFFFFF;
+  background-color: #110133;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.submitBtn:hover{
+color: black;
+background-color: white;
+}
+
+/* DIFFERENT SIZES */
+@media (min-width: 700px){
+  /* .main{
+  cursor: default;
+  margin: 0 auto;
+  max-width: 1140px;
+  min-width: 900px;
+  } */
+  img {
+    height: 70px;
+    width: 70px;
+  }
+}

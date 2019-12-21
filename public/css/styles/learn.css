@@ -1,0 +1,20 @@
+.title-container {
+    margin: 2rem auto;
+    height: 5em;
+}
+.subtitle-container {
+    margin: 3rem auto;
+    height: 3em;
+}
+
+h1.title {
+    margin: 3rem 0
+}
+h2.subtitle {
+    margin: 2rem 0;
+}
+
+#recomendations.flexcontainer{
+    height: 3vh;
+    margin: 2em;
+}

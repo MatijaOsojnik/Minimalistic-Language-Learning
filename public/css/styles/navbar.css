@@ -1,0 +1,45 @@
+.container-fluid {
+    margin: 0 auto;
+    padding: 3 8%;
+    text-align: center;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-item{
+  padding-left: 1.8rem;
+}
+
+.nav-link {
+    font-size: 1.4rem;
+    display: inline-flex;
+    position: relative;
+    font-weight: bold;
+    padding: 0 1.5rem;
+}
+a{
+  color: #1b2a49;
+  text-decoration: none;
+  display: inline-block;
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+}
+
+img{
+    transition: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    border-radius: 2%;
+}
+
+img:hover, img:focus {
+    opacity: 90%;
+}
+
+@media (min-width: 850px){
+  .main{
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 900px;
+  }
+}

@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs")%>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="flex-container">
+        <div>
+            <h1>You're doing great!</h1>
+            <h2>Want to go again?</h2>
+            <form action="/practice">
+                <button id="restart" class="submitBtn">Restart</button>
+            </form>
+            <form action="/learn">
+                <button id="return" class="submitBtn">Keep learning</button>
+            </form>
+        </div>
+    </div>
+<%- include("partials/footer.ejs")%>
