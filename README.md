@@ -16,11 +16,11 @@ USAGE
 
 ```npm i express body-parser jquery jsdom dotenv ejs ```
 
-  You can also install these packages:
+   You can also install these packages:
   
 ```npm i mongodb mongoose node-sass ```
 
-4. In the project directory type ```nodemon app.js ``` for the local server to start running.
+4. Go to the server folder in the console and type ```nodemon app.js ``` for the local server to start running.
 
 5. Play with the project and feel free to improve it:)
 
