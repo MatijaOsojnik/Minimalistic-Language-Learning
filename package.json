@@ -11,14 +11,13 @@
     "url": "git+ssh://git@github.com/SnorkiV3/phraser.git"
   },
   "author": "Matija Osojnik",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SnorkiV3/phraser/issues"
   },
   "homepage": "https://github.com/SnorkiV3/phraser#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "browserify": "^16.5.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
