@@ -1,0 +1,69 @@
+<%- include('../partials/header.ejs') %>
+<link rel="stylesheet" href="css/styles/learn.css">
+</head>
+
+<body>
+    <div class="main">
+        <%- include('../partials/navbar.ejs') %>
+        <section id="header">
+            <div class="container-fluid">
+                <div class="title-container">
+                    <h1 class="germantext">Hey fellow learner!</h1>
+                </div>
+                <div class="subtitle-container">
+                    <h2 class="germantext">Ready to take your first class?</h2>
+                </div>
+            </div>
+        </section>
+        <section id="class">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <h3 class="maintext">Coffee Shop</h3>
+                        <div class="container-link">
+                            <a href="/learn/coffee">
+                                <span class="link-spanner"></span>
+                            </a>
+                            <img src="images/coffee-break.svg" alt=""> 
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div>
+                            <h3 class="maintext">Cinema</h3>
+                        </div>
+                        <div class="container-link">
+                            <a href="/learn/cinema">
+                                <span class="link-spanner"></span>
+                            </a>
+                            <img src="images/movie.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div>
+                            <h3 class="maintext">Directions</h3>
+                        </div>
+                        <div class="container-link">
+                            <a href="/learn/directions">
+                                <span class="link-spanner"></span>
+                            </a>
+                            <img src="images/navigation.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div>
+                            <h3 class="maintext">Greetings</h3>
+                        </div>
+                        <div class="container-link">
+                            <a href="/learn/greetings">
+                                <span class="link-spanner"></span>
+                            </a>
+                            <img src="images/chat.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include("../partials/particles") %>
+    <%- include('../partials/footer.ejs') %>
+</body>

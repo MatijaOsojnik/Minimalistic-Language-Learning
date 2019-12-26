@@ -13,7 +13,7 @@
 }
 
 .nav-link {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     display: inline-flex;
     position: relative;
     font-weight: bold;
@@ -27,7 +27,7 @@ a{
     letter-spacing: 1px;
 }
 
-img{
+img#logo{
     transition: cubic-bezier(0.6, 0.04, 0.98, 0.335);
     border-radius: 2%;
 }

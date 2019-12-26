@@ -13,10 +13,10 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 // middleware that is specific to this router
-router.use(function timeLog(req, res, next) {
-  console.log("Time: ", Date.now());
-  next();
-});
+// router.use(function timeLog(req, res, next) {
+//   console.log("Time: ", Date.now());
+//   next();
+// });
 // define the home page route
 router.get("/", (req, res) => {
   res.render("main");

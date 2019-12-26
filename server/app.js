@@ -8,8 +8,6 @@ const mongoose = require("mongoose");
 path = require("path")
 $ = require("jquery")(new jsdom.JSDOM().window);
 
-console.log(sass.info);
-
 const app = express();
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })

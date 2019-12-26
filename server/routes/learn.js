@@ -4,7 +4,9 @@ const bodyParser = require("body-parser")
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(express.static(path.join(__dirname, "../../") + "/public"));
 
 app.set("views", path.join(__dirname, "../../views"));
@@ -12,14 +14,29 @@ app.engine("html", require("ejs").renderFile);
 
 app.set("view engine", "html");
 
-// middleware that is specific to this router
-router.use(function timeLog(req, res, next) {
-  console.log("Time: ", Date.now());
-  next();
+router.route("/")
+.get((req, res) => {
+  res.render("learn/learn")
 });
-// define the home page route
-router.get("/", (req, res)  => {
-  res.render("learn")
-});
+
+router.route("/coffee")
+  .get((req, res) => {
+    res.render("learn/coffee")
+  })
+
+router.route("/cinema")
+  .get((req, res) => {
+    res.render("learn/cinema")
+  })
+router.route("/directions")
+  .get((req, res) => {
+    res.render("learn/directions")
+  })
+router.route("/greetings")
+  .get((req, res) => {
+    res.render("learn/greetings")
+  })
+
+
 
 module.exports = router;
