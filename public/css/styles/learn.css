@@ -48,3 +48,9 @@ h4.subtitle {
 .container-link:hover {
     opacity: 60%;
 }
+@media(max-width: 776px) {
+    .container-content {
+        margin: 1rem auto;
+        width: 67%;
+    }
+}

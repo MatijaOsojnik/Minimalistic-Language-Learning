@@ -7,14 +7,43 @@
   font-family: LoveloBlack-Bold;
   src: url(../../fonts/Lovelo-LineBold.ttf);
 }
+@font-face{
+  font-family: Moon;
+  src: url(../../fonts/Moon\ Light.otf)
+}
+@font-face {
+  font-family: Moon-Bold;
+  src: url(../../fonts/Moon\ Bold.otf)
+}
+@font-face {
+  font-family: Aleo;
+  src: url(../../fonts/Aleo-Regular.otf)
+}
+@font-face {
+  font-family: Aleo-Bold;
+  src: url(../../fonts/Aleo-Bold.otf)
+}
+@font-face {
+  font-family: Aleo-Light;
+  src: url(../../fonts/Aleo-Light.otf)
+}
 
+
+
+
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
 /* f4f4f4 */
 /* linear-gradient(to right, #ffffff, #bae8e8); */
 
 body {
+  position: relative;
   background: #ecfcff;
-    margin: 0;
-  padding: 0;
+  margin: 0;
+  padding: 0 0 2rem 0;
+  min-height: 100%;
 }
 
 div {
@@ -28,13 +57,13 @@ div {
     text-align: center;
 }
 
-.main {
+/* .main {
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
   position: absolute;
-}
+} */
 
 a, a:hover{
   color: #1b2a49;
@@ -48,8 +77,8 @@ textarea, h3#german, span.count{
 }
 
 
-a, h1, h2, h3, h4, h5, h6 {
-  font-family: LoveloBlack;
+p, span,a, h1, h2, h3, h4, h5, h6 {
+  font-family: "Aleo-Bold";
 }
 
 
@@ -82,7 +111,7 @@ textarea {
   padding: 15px;
     transition: box-shadow 0.2s ease-in-out;
 }
-textarea:hover{
+textarea:hover, input:hover{
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 input:focus, textarea:focus {
@@ -134,9 +163,20 @@ background-color: #32407b;
   position: absolute;
   top: 5%;
   left: 2rem;
+  z-index: 1;
 }
 .arrow-back:hover{
   color: black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  background-color: #efefef;
+  text-align: center;
 }
 
 /* DIFFERENT SIZES */

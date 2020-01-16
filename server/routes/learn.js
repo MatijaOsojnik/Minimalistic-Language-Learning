@@ -19,15 +19,21 @@ router.route("/")
   res.render("learn/learn")
 });
 
+router.route("/cinema")
+  .get((req, res) => {
+    res.render("learn/cinema")
+  })
+
+router.route("/cinema/1")
+.get((req, res) => {
+  res.render("learn/cinema/1")
+})
+
 router.route("/coffee")
   .get((req, res) => {
     res.render("learn/coffee")
   })
 
-router.route("/cinema")
-  .get((req, res) => {
-    res.render("learn/cinema")
-  })
 router.route("/directions")
   .get((req, res) => {
     res.render("learn/directions")

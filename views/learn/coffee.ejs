@@ -1,21 +1,41 @@
 <%- include('../partials/nested-header.ejs') %>
-<link rel="stylesheet" href="/css/styles/learn.css">
+<link rel="stylesheet" href="/css/styles/learn_partials.css">
 </head>
 
 <body>
+
     <div class="main">
         <%-// include('../partials/navbar.ejs') %>
         <a href="/learn"><i class="fas fa-angle-left arrow-back fa-2x"></i></a>
-        <section id="header">
-            <div class="container-fluid">
-                <div class="title-container">
-                    <h1 class="germantext">Coffee Shop</h1>
+        <div class="row">
+            <section id="content" class="col-lg-8 col-md-8 col-sm-12">
+                <div class="container-content">
+                    <h1 class="title">Coffee Shop</h1>
+                    <h2 class="subtitle">Let's order our first coffee!</h2>
+                    <p>
+                        A latte capuccino please.
+                    </p>
+                    <p>
+                        We love coffee. And the way to order coffee is to communicate.
+                    </p>
+                    <p>
+                        Let's order our favourite coffee in Starbucks with a few simple phrases. Let's learn them together!
+                    </p>
                 </div>
-                <div class="subtitle-container">
-                    <h4 class="subtitle">Let's order our first coffee!</h4>
+            </section>
+            <section id="calltoaction" class="col-lg-4 col-md-4 col-sm-12">
+                <div class="img-container">
+                    <img src="/images/coffee-break.svg" alt="coding" style="width: 60%">
                 </div>
-            </div>
-        </section>
+                <div class="flex-container">
+                    <span class="break">5 lectures</span>
+                    <span>10 minutes</span>
+                </div>
+                <form action="/learn/coffee/#1">
+                    <input type="submit" class="submitBtn" value="Get started">
+                </form>
+            </section>
+        </div>
     </div>
     <%- include("../partials/particles") %>
     <%- include('../partials/footer.ejs') %>

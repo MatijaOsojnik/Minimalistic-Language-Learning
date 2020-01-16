@@ -21,6 +21,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "express-promise-router": "^3.0.3",
     "jquery": "^3.4.1",
     "jsdom": "^15.2.1",
     "mongodb": "^3.4.0",

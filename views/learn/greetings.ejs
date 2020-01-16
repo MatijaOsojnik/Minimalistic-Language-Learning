@@ -1,21 +1,41 @@
 <%- include('../partials/nested-header.ejs') %>
-<link rel="stylesheet" href="/css/styles/learn.css">
+<link rel="stylesheet" href="/css/styles/learn_partials.css">
 </head>
 
 <body>
+
     <div class="main">
         <%-// include('../partials/navbar.ejs') %>
         <a href="/learn"><i class="fas fa-angle-left arrow-back fa-2x"></i></a>
-        <section id="header">
-            <div class="container-fluid">
-                <div class="title-container">
-                    <h1 class="germantext">Greetings</h1>
+        <div class="row" style="margin-top: 3rem;">
+            <section id="content" class="col-lg-8 col-md-8 col-sm-12">
+                <div class="container-content">
+                    <h1 class="title">Greetings</h1>
+                    <h2 class="subtitle">Hey! How are you?</h2>
+                    <p>
+                        The pillars of communication. People love being greeted with a warm smile.
+                    </p>
+                    <p>
+                        This is a short course and a pretty useful one.
+                    </p>
+                    <p>
+                        A conversation starter for sure.
+                    </p>
                 </div>
-                <div class="subtitle-container">
-                    <h4 class="subtitle">Hey! How's it going?</h4>
-                </div>
-            </div>
-        </section>
+            </section>
+            <section id="calltoaction" class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="img-container">
+                        <img src="/images/communication.svg" alt="coding" style="width: 60%">
+                    </div>
+                    <div class="flex-container">
+                        <span class="break">5 lectures</span>
+                        <span>10 minutes</span>
+                    </div>
+                    <form action="/learn/greetings/#1">
+                        <input type="submit" class="submitBtn" value="Get started">
+                    </form>
+                </section>
+        </div>
     </div>
     <%- include("../partials/particles") %>
     <%- include('../partials/footer.ejs') %>

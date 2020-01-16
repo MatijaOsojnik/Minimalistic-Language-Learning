@@ -1,0 +1,10 @@
+li {
+    padding: 5px;
+}
+p {
+    line-height: 2;
+}
+.container-content{
+    margin: 5rem auto;
+    width: 50%;
+}

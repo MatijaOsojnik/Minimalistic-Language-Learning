@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-const sass = require("node-sass");
 const express = require('express');
 const bodyParser = require('body-parser');
 const jsdom = require("jsdom");
