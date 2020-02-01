@@ -10,7 +10,7 @@ USAGE
 
 1. Get to your directory through the console
 
-2. Do ```npm init```
+2. Do ```npm install```
 
 3. Required packages:
 
