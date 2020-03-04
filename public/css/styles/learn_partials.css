@@ -16,7 +16,7 @@
     color: #222831;
 }
 .subtitle{
-    font-family: "Aleo-Bold";
+    font-family: "Raleway";
     font-size: 24px;
     margin-bottom: 1.8rem;
     font-weight: 700;
@@ -44,14 +44,15 @@
     margin-bottom: 3rem;
 }
 p{
-    font-family: "Aleo";
+    font-family: "Raleway";
     font-size: 18px;
     line-height: 26px;
     margin: 0 0 20px 0;
     /* color: #393e46; */
 }
 span{
-    font-family: "Aleo-Bold";
+    font-family: "Raleway";
+    font-weight: 900;
     font-size: 20px;
 }
 

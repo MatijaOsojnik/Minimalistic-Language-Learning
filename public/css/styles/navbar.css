@@ -39,7 +39,7 @@ img:hover, img:focus {
 @media (min-width: 850px){
   .main{
   margin: 0 auto;
-  max-width: 1200px;
-  min-width: 900px;
+  max-width: 1500px;
+  min-width: 850px;
   }
 }

@@ -15,9 +15,11 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 router.route("/")
-.get((req, res) => {
-  res.render("learn/learn")
-});
+  .get((req, res) => {
+    res.render("learn/learn", {
+      user: req.user,
+    })
+  });
 
 router.route("/cinema")
   .get((req, res) => {
@@ -25,9 +27,9 @@ router.route("/cinema")
   })
 
 router.route("/cinema/1")
-.get((req, res) => {
-  res.render("learn/cinema/1")
-})
+  .get((req, res) => {
+    res.render("learn/cinema/1")
+  })
 
 router.route("/coffee")
   .get((req, res) => {

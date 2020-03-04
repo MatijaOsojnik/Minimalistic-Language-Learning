@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
 
+const session = require("express-session");
+
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -11,6 +13,14 @@ app.set("views", path.join(__dirname, "../../views"));
 app.engine("html", require("ejs").renderFile);
 
 app.set("view engine", "html");
+
+// app.use(
+//   session({
+//     secret: 'snEa?ky$22$4!1l_kaKSF5_-_saddGgggV214_513$$22seCrREafGBt10_-sda!!02',
+//     resave: true,
+//     saveUninitialized: true
+//   })
+// );
 
 // Gather modules
 
@@ -24,13 +34,15 @@ let countTotal = 0;
 
 router.route("/")
   .get((req, res) => {
+    console.log(req.user);
     const newNumber = random(data);
     germanPhrase = phrase.german(newNumber, data);
     englishPhrase = phrase.english(newNumber, data);
     res.render("practice", {
       germanPhrase: germanPhrase,
       englishPhrase: englishPhrase,
-      count: countRight
+      count: countRight,
+        user: req.user,
     });
   })
   .post((req, res) => {

@@ -19,7 +19,9 @@ app.set("view engine", "html");
 // });
 // define the home page route
 router.get("/", (req, res) => {
-  res.render("about");
+  res.render("about", {
+    user: req.user,
+  });
 });
 
 module.exports = router;

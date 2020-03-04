@@ -5,7 +5,7 @@
 
 h2.germantext {
     padding: 1rem 0 0;
-    font-family: "Germania One";
+    font-family: "Raleway";
     color: #3a3535;
 }
 
@@ -14,13 +14,13 @@ h2.germantext {
 }
 
 .subtext {
-    font-family: "Germania One";
+    font-family: "Raleway";
     color: #6c7b95;
 }
 
 .maintext {
     padding: 1.5rem 0 0.2rem;
-    font-family: "Germania One";
+    font-family: "Raleway";
 }
 
 div.friendly{
