@@ -20,19 +20,34 @@
       <li class="nav-item">
         <a class="nav-link" href="/about">About</a>
       </li>
-      <li class="nav-item">
         <% if(typeof user != 'undefined') { %>
-          <a class="nav-link" href="/users/logout">Log out</a>
+                <li class="nav-item">
+          <div class="dropdown">
+            <button class="nav-link btn" type="button" data-toggle="dropdown" aria-haspopup="false"
+              aria-expanded="false">
+              <i class="fas fa-user-ninja"></i>
+              <span><%= user.nickName %></span>
+              
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="/user/id">Settings</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/users/logout">Log out</a>
+            </div>
+          </div>
+        </li>
           <% } else { %>
+      <li class="nav-item">
 
-            <a class="nav-link" href="/users/register">Get Started</a>
-          <% } %>
+        <a class="nav-link" href="/users/register">Get Started</a>
       </li>
-      <% if(typeof user != 'undefined') { %>
+          <% } %>
+      <!-- <% if(typeof user != 'undefined') { %>
         <li class="nav-item">
         <a class="nav-link" href="/user/id">Profile</a>
         </li>
-        <% }  %>
+        <% }  %> -->
     </ul>
   </div>
 </nav>

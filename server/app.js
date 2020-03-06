@@ -47,7 +47,7 @@ app.use(
     secret: 'snEa?ky$22$4!1l_kaKSF5_-_saddGgggV214_513$$22seCrREafGBt10_-sda!!02',
     resave: true,
     saveUninitialized: true,
-    cookie: {maxAge: 60000}
+    cookie: {maxAge: 834000}
   })
 );
 

@@ -1,0 +1,19 @@
+a{
+    font-size: 18px;
+}
+
+label{
+    line-height: 50px;
+    font-weight: 600;
+    display: block;
+}
+
+span{
+    color: #6c7b95;
+    display: block;
+}
+
+.settings-box{
+    margin: 8px;
+    display:block;
+}
