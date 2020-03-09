@@ -1,95 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const passport = require('passport');
 // Load User model
-const User = require('../models/User');
+const userController = require('../controllers/userController')
 const { forwardAuthenticated } = require('../configs/auth');
 
-// Login Page
-router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
+// Login Route
+router.route('/login')
+.get(forwardAuthenticated, (req, res) => res.render('login'))
+.post(userController.loginUser)
 
-// Register Page
-router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
+// Register Route
+router.route('/register')
+.get(forwardAuthenticated, (req, res) => res.render('register'))
+.post(userController.registerUser)
 
-// Register
-router.post('/register', (req, res) => {
-  const { nickName, email, password, password2 } = req.body;
-  let errors = [];
+// Logout Route
 
-  if (!nickName || !email || !password || !password2) {
-    errors.push({ msg: 'Please enter all fields' });
-  }
+router.route('/logout')
+.get(userController.logoutUser)
 
-  if (password != password2) {
-    errors.push({ msg: 'Passwords do not match' });
-  }
-
-  if (password.length < 8) {
-    errors.push({ msg: 'Password must be at least 8 characters' });
-  }
-
-  if (errors.length > 0) {
-    res.render('register', {
-      errors,
-      nickName,
-      email,
-      password,
-      password2
-    });
-  } else {
-    User.findOne({ email: email }).then(user => {
-      if (user) {
-        errors.push({ msg: 'Email already exists' });
-        res.render('register', {
-          errors,
-          nickName,
-          email,
-          password,
-          password2
-        });
-      } else {
-        const newUser = new User({
-          nickName,
-          email,
-          password
-        });
-
-        bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(newUser.password, salt, (err, hash) => {
-            if (err) throw err;
-            newUser.password = hash;
-            newUser
-              .save()
-              .then(user => {
-                req.flash(
-                  'success_msg',
-                  'You are now registered and can log in'
-                );
-                res.redirect('/users/login');
-              })
-              .catch(err => console.log(err));
-          });
-        });
-      }
-    });
-  }
-});
-
-// Login
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/learn',
-    failureRedirect: '/users/login',
-    failureFlash: true
-  })(req, res, next);
-});
-
-// Logout
-router.get('/logout', (req, res) => {
-  req.logout();
-  req.flash('success_msg', 'You are logged out');
-  res.redirect('/users/login');
-});
+// Update Route
+router.route('/:id')
+.get(userController.getUser)
+.put(userController.updateUser)
 
 module.exports = router;

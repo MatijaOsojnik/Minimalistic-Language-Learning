@@ -39,6 +39,7 @@ module.exports = router;*/
  router.get('/:id', ensureAuthenticated, (req, res, next) => {
   console.log(req.params.id)
   res.render('user', {user: req.user})
+  next();
 });
 
 

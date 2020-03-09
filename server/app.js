@@ -91,6 +91,8 @@ app.use('/user', main);
 
 app.get('/', (req,res) => res.render('main', {user: req.user}))
 
+app.get('/dashboard', (req, res) => res.render('dashboard'))
+
 //auth routes
 
 const users = require(__dirname + "/routes/users.js");

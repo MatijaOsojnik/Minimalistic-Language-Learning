@@ -13,10 +13,10 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-2 mx-auto">
                     <nav class="nav flex-column">
-                        <span><a class="nav-link active" href="#">User</a></span>
+                        <!-- <span><a class="nav-link active" href="#">User</a></span>
                         <span><a class="nav-link" href="#">Link</a></span>
                         <span><a class="nav-link" href="#">Link</a></span>
-                        <span><a class="nav-link href="#">Disabled</a></span>
+                        <span><a class="nav-link href=" #">Disabled</a></span> -->
                     </nav>
                     <div>
                         <span class="">Account</span>
@@ -24,13 +24,12 @@
                     <a href="/users/logout" class="btn btn-secondary">Logout</a>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-10 mx-auto" style="text-align: left">
-                    <form action="/users/update">
+                    <form action="/users/update/<%= user.name %>" method="post">
                         <div class="settings-box">
                             <div class="settings-box">
                                 <label for="nickName">Your Display Name
                                     <span>This is how other will see you.</span>
                                 </label>
-
                                 <input type="text" name="nickName" class="form-control" value="<%= user.nickName %>">
                             </div>
                         </div>
@@ -40,8 +39,13 @@
                                 <label for="email">Your Email
                                     <span>We will never share your email address or display it publicly.</span>
                                 </label>
-
                                 <input type="text" name="email" class="form-control" value="<%= user.email %>">
+                            </div>
+                        </div>
+
+                        <div class="settings-box">
+                            <div class="settings-box">
+                                <input type="submit" class="form-control">
                             </div>
                         </div>
                     </form>
