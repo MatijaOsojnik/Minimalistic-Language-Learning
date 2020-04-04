@@ -1,17 +1,15 @@
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
-const passport = require("passport")
 
-exports.registerUser = (req, res) => {
+exports.registerUser = async (req, res) => {
     const {
-        nickName,
+        name,
         email,
         password,
         password2
     } = req.body;
     let errors = [];
 
-    if (!nickName || !email || !password || !password2) {
+    if (!name || !email || !password || !password2) {
         errors.push({
             msg: 'Please enter all fields'
         });
@@ -32,69 +30,53 @@ exports.registerUser = (req, res) => {
     if (errors.length > 0) {
         res.render('register', {
             errors,
-            nickName,
+            name,
             email,
             password,
             password2
         });
     } else {
-        User.findOne({
-            email: email
-        }).then(user => {
-            if (user) {
-                errors.push({
-                    msg: 'Email already exists'
-                });
-                res.render('register', {
-                    errors,
-                    nickName,
-                    email,
-                    password,
-                    password2
-                });
-            } else {
-                const newUser = new User({
-                    nickName,
-                    email,
-                    password
-                });
-
-                bcrypt.genSalt(10, (err, salt) => {
-                    bcrypt.hash(newUser.password, salt, (err, hash) => {
-                        if (err) throw err;
-                        newUser.password = hash;
-                        newUser
-                            .save()
-                            .then(user => {
-                                req.flash(
-                                    'success_msg',
-                                    'You are now registered and can log in'
-                                );
-                                res.redirect('/users/login');
-                            })
-                            .catch(err => console.log(err));
-                    });
-                });
-            }
-        });
+        try {
+            const user = new User(req.body)
+            await user.save()
+            const token = await user.generateAuthToken()
+            res.status(201).render('register', {
+                user,
+                token
+            })
+        } catch (error) {
+            res.status(400).send(error)
+        }
     }
 }
 
-exports.logoutUser = (req, res, next) => {
+exports.logoutUser = async (req, res, next) => {
     req.logout();
     req.flash('success_msg', 'You are logged out');
     res.redirect('/users/login');
 }
 
-exports.loginUser = (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/learn',
-        failureRedirect: '/users/login',
-        failureFlash: true
-    })(req, res, next);
+exports.loginUser = async (req, res, next) => {
+    try {
+        const {
+            email,
+            password
+        } = req.body
+        const user = await User.findByCredentials(email, password)
+        if (!user) {
+            return res.status(401).send({
+                error: 'Login failed! Check authentication credentials'
+            })
+        }
+        const token = await user.generateAuthToken()
+        res.redirect('main')
+        
+    } catch (error) {
+        res.status(400).send(error)
+    }
 }
 
-exports.getAllUsers = (req, res) => {
+exports.getAllUsers = async (req, res) => {
     User.find((error, response) => {
         if (error) {
             return next(error)
@@ -104,7 +86,7 @@ exports.getAllUsers = (req, res) => {
     })
 }
 
-exports.getUser = (req, res, next) => {
+exports.getUser = async (req, res, next) => {
     User.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error);

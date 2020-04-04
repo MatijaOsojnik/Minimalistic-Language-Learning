@@ -1,21 +1,25 @@
-const jwt = require("jsonwebtoken");
-require('dotenv').config();
+const jwt = require('jsonwebtoken')
+const User = require('../models/User')
 
-module.exports = (req, res, next) => {
-    const authHeader = req.headers.authorization;
-
-    if (authHeader) {
-        const token = authHeader.split(' ')[1];
-
-        jwt.verify(token, accessTokenSecret, (err, user) => {
-            if (err) {
-                return res.sendStatus(403);
-            }
-            req.user = user;
-            next();
-        });
-    } else {
-        res.sendStatus(401);
+const auth = async (req, res, next) => {
+    const token = req.header('Authorization').replace('Bearer ', '')
+    const data = jwt.verify(token, process.env.JWT_KEY)
+    try {
+        const user = await User.findOne({
+            _id: data._id,
+            'tokens.token': token
+        })
+        if (!user) {
+            throw new Error()
+        }
+        req.user = user
+        req.token = token
+        next()
+    } catch (error) {
+        res.status(401).send({
+            error: 'Not authorized to access this resource'
+        })
     }
-    };
+
 }
+module.exports = auth
