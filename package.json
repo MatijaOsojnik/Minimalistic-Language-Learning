@@ -29,7 +29,7 @@
     "express-promise-router": "^3.0.3",
     "express-session": "^1.17.0",
     "jquery": "^3.4.1",
-    "jsdom": "^15.2.1",
+    "jsdom": "^16.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.4.0",
     "mongoose": "^5.8.1",
